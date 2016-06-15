@@ -1,0 +1,19 @@
+/* 事先定义了一个变量来保存标注稿基准字体大小：*/
+@font-size-base: 75;
+.btn {
+  width: 414rem/@font-size-base;
+  height: 80rem/@font-size-base;
+}
+
+/* less编译之后，会将正确的rem值计算出来: */
+.btn {
+  width: 5.52rem;
+  height: 1.06666667rem;
+}
+/* @3x下图的那些切图做法, 以安卓下载按钮的样式为例:*/
+.btn-android {
+  background-image: url("../img/@2x/android.png?v=@@version");
+  [data-dpr="3"] & {
+    background-image: url("../img/@3x/android.png?v=@@version");
+  }
+}
