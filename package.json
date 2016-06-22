@@ -1,0 +1,15 @@
+{
+  "name": "proName-demos",
+  "version": "1.0.0",
+  "description": "a collection of simple demos of proName",
+  "main": "index.js",
+  "keywords": [
+    "build",
+    "demo",
+    "webpack"
+  ],
+  "author": "Tanglili",
+  "license": "MIT",
+  "dependencies": {
+  }
+}
