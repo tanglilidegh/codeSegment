@@ -1,0 +1,213 @@
+// 变量
+@nice-blue: 5b83ad;
+@light-blue: @nice-blue + #111;
+
+// 混合 (Mixins)
+#header{
+  color: @light-blue;
+}
+.bordered{
+  border-top: dotted 1px black;
+  border-bottom: solid 2px black;
+}
+
+#menu a{
+  color: #111;
+  .bordered;
+}
+
+.post a{
+  color: red;
+  .bordered;
+}
+
+//混合“类”选择器或者“id”选择器
+.a,#b{
+  color: red;
+}
+.mixin-class{
+  .a();
+}
+.mixin-id{
+  #b();
+}
+//带选择器的混合集
+.my-hover-mixin(){
+  &:hover{
+    border: 1px solid red;
+  }
+}
+button{
+  .my-hover-mixin();
+}
+
+// !important 关键字
+
+.foo(@bg:#f5f5f5,@color:#900){
+  background: @bg;
+  color: @color;
+}
+.unimportant{
+  .foo();
+}
+.important{
+  .foo() !important;
+}
+
+//Parametric Mixins  带参的混合宏
+.border-radius(@radius){
+  -webkit-border-radius: @radius;
+  -moz-border-radius: @radius;
+  border-radius: @radius;
+}
+#header{
+  .border-radius(4px);
+}
+.button{
+  .border-radius(6px);
+}
+
+// Parametric Mixins  带默认参数的混合宏
+.border-radius(@radius: 5px){
+  -webkit-border-radius: @radius;
+  -moz-border-radius: @radius;
+  border-radius: @radius;
+}
+
+#header{
+  .border-radius;
+}
+
+//命名参数
+
+.mixin(@color:black; @margin: 10px; @padding:20px){
+  color: @color;
+  margin: @margin;
+  padding: @padding;
+}
+.class1{
+  .mixin(@margin: 20px; @color: #33acfe);
+}
+.class2{
+  .mixin(#efca44; @padding: 40px);
+}
+
+// @arguments 变量
+
+.box-shadow(@x: 0; @y: 0; @blur: 1px; @color: #000){
+  -webkit-box-shadow: @arguments;
+  -moz-box-shadow: @arguments;
+  box-shadow: @arguments;
+}
+.big-block{
+  .box-shadow(2px;5px);
+}
+
+
+// 嵌套规则(Nested rules)
+
+#header{
+  color: black;
+  .navigation{
+    font-size: 12px;
+  }
+  .logo{
+    width: 300px;
+  }
+}
+
+//经典的 clearfix 代码
+
+.clearfix{
+  display: block;
+  zoom: 1;
+
+  &:after{
+    content: "";
+    display: block;
+    font-size: 0;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+  }
+}
+
+// Parent Selectors 父级选择器
+a{
+  color: blue;
+  &:hover{
+    color: green;
+  }
+}
+
+
+.button{
+  &-ok{
+    background-image: url("ok.png");
+  }
+  &-cancel{
+    background-image: url("cancel.png");
+  }
+  &-custom{
+    background-image: url("custom.png");
+  }
+}
+
+
+
+// 媒体查询
+
+.screencolor{
+  @media screen {
+    color: green;
+    @media (min-width:768px) {
+      color: red;
+    }
+  }
+  @media tv {
+    color: black;
+  }
+}
+
+// 运算 Operations
+
+@base: 5%;
+@filler: @base * 2;
+@other: @base + @filler;
+body{
+  color: #888 / 4;
+  background-color: @base - color + #111;
+  height: 100% / 2 + @filler;
+}
+
+
+// 函数 (Functions)
+
+//在下面的例子中我们使用 percentage 将 0.5 转换为 50%，然后将基础颜色值的饱和度增加了 5%，
+//最后将背景颜色的亮度增加了 25% 之后又将色相值增加 8:
+@base: #f04615;
+@width: 0.5;
+.class{
+  width: percentage(@width);  // returns `50%`
+  color: saturate(@base, 5%);
+  background-color: spin(lighten(@base, 25%), 8);
+}
+
+//命名空间和访问器(Namespaces & Accessors)
+#bundle{
+  .button{
+    display: block;
+    border: 1px solid black;
+    background-color: grey;
+    &:hover{
+      background-color: white;
+    }
+  }
+  .tab{ }
+  .citation{ }
+}
+
+#header a{
+  color: orange;
+  #bundle > .button;
+}
