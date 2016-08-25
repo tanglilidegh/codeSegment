@@ -42,7 +42,7 @@
 //==============================
 
 /* 定制一个font-dpr()这样的Sass混合宏 */
-
+// 为了能更好的利于开发，在实际开发中，我们可以定制一个font-dpr()这样的Sass混合宏：
 @mixin font-dpr($font-size){
     font-size: $font-size;
 
@@ -57,26 +57,12 @@
 
 /* 有了这样的混合宏之后，在开发中可以直接这样使用 */
 
-@include font-dpr(16px);
+// @include font-dpr(16px);
 
 
 //==============================
-为了能更好的利于开发，在实际开发中，我们可以定制一个font-dpr()这样的Sass混合宏：
 
-@mixin font-dpr($font-size){
-    font-size: $font-size;
 
-    [data-dpr="2"] & {
-        font-size: $font-size * 2;
-    }
-
-    [data-dpr="3"] & {
-        font-size: $font-size * 3;
-    }
-}
-有了这样的混合宏之后，在开发中可以直接这样使用：
-
-@include font-dpr(16px);
 
 
 

@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta http-equiv="content-Type" content="text/html;charset=utf-8">
+    <!-- content-Type(设定网页字符集) -->
+    <meta charset="UTF-8">
+    <!--编码Unicode UTF-8-->
+    <link rel="shortcut icon" href="favicon.ico" type="image/vnd.microsoft.icon"/>
+    <!--浏览器图标地址和类型-->
+    <meta name="Generator" content="LIXIPHP (http://lixiphp.com)"/>
+    <!--Generator 生产者-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--网页缩放比例为1:1
+        viewport：能优化移动浏览器的显示。如果不是响应式网站，不要使用initial-scale或者禁用缩放。
+        width：宽度（数值 / device-width）（范围从200 到10,000，默认为980 像素）
+        height：高度（数值 / device-height）（范围从223 到10,000）
+        initial-scale：初始的缩放比例 （范围从>0 到10）
+        minimum-scale：允许用户缩放到的最小比例
+        maximum-scale：允许用户缩放到的最大比例
+        user-scalable：用户是否可以手动缩 (no,yes)
+        minimal-ui：可以在页面加载时最小化上下状态栏。（已弃用）
+        注意，很多人使用initial-scale=1到非响应式网站上，这会让网站以100%宽度渲染，
+        用户需要手动移动页面或者缩放。如果和initial-scale=1同时使用user-scalable=no或maximum-scale=1，
+        则用户将不能放大/缩小网页来看到全部的内容。
+    -->
+    <meta name="MobileOptimized" content="width">
+    <!--控制手机布局，width默认为屏幕大小，也可以为具体数字如240、480，Windows Mobile推荐设置为240-->
+    <meta name="HandheldFriendly" content="true">
+    <!--控制手机放大缩小网页显示--><!--开启对web app的支持-->
+
+    <!--**制作手机页面必须加上的-->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <!--控制全屏显示(Apple Safar)-->
+    <meta name="format-detection" content="telephone=no"/>
+    <!--主要是正对苹果手机将数字自动识别为号码-->
+
+
+    <meta http-equiv="cleartype" content="on">
+    <!--ClearType主要是针对LCD液晶显示器设计，可提高文字的清晰度。-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <!--兼容性,优先使用 IE 最新版本和 Chrome -->
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <!--
+        浏览器内核控制：国内浏览器很多都是双内核（webkit和Trident），
+        webkit内核高速浏览，IE内核兼容网页和旧版网站。
+        而添加meta标签的网站可以控制浏览器选择何种内核渲染。
+    -->
+    <meta name="keywords" content="your,keywords,here,comma,separated,no,spaces">
+    <!--
+        页面关键词，每个网页应具有描述该网页内容的一组唯一的关键字。
+        使用人们可能会搜索，并准确描述网页上所提供信息的描述性和代表性关键字及短语。
+        标记内容太短，则搜索引擎可能不会认为这些内容相关。另外标记不应超过 874 个字符。
+    -->
+    <meta name="description" content="150 chars">
+    <!-- 页面描述，每个网页都应有一个不超过 150 个字符且能准确反映网页内容的描述标签 -->
+
+
+    <meta content="email=no" name="format-detection"/>
+    <!-- 忽略识别邮箱，主要是针对安卓手机会自动将符合邮箱格式的字符串识别为邮箱地址-->
+    <meta name="apple-itunes-app" content="app-id=myAppStoreID, affiliate-data=myAffiliateData, app-argument=myURL"/>
+    <!-- 添加智能 App 广告条 Smart App Banner：告诉浏览器这个网站对应的app，并在页面上显示下载banner:https://developer.apple.com/library/ios/documentation/AppleApplications/Reference/SafariWebContent/PromotingAppswithAppBanners/PromotingAppswithAppBanners.html -->
+
+    <meta name="screen-orientation" content="portrait">
+    <!-- uc强制竖屏 -->
+    <meta name="x5-orientation" content="portrait">
+    <!-- QQ强制竖屏 -->
+    <meta name="full-screen" content="yes">
+    <!-- UC强制全屏 -->
+    <meta name="x5-fullscreen" content="true">
+    <!-- QQ强制全屏 -->
+    <meta name="browsermode" content="application">
+    <!-- UC应用模式 -->
+    <meta name="x5-page-mode" content="app">
+    <!-- QQ应用模式 -->
+    <meta name="msapplication-tap-highlight" content="no">
+    <!-- windows phone 点击无高光 -->
+
+    <title>Title</title>
+</head>
+<body>
+<h1>常用知识点</h1>
+<h3>获取滚动条的滚动值</h3>
+<pre>window.scrollY  window.scrollX</pre>
+<p>桌面浏览器中想要获取滚动条的值是通过document.scrollTop和document.scrollLeft得到的，但在iOS中你会发现这两
+    个属性是未定义的，为什么呢？因为在iOS中没有滚动条的概念，在Android中通过这两个属性可以正常获取到滚动条的值，那么在iOS中我们该如何获
+    取滚动条的值呢？就是上面两个属性，但是事实证明android也支持这属性，所以索性都用woindow.scroll.</p>
+<br>
+<h3>手机图片和视频上传</h3>
+<pre>
+    &lt;!-- 选择照片 --&gt;
+    &lt;input type=file accept="image/*"&gt;
+    &lt;!-- 选择视频 --&gt;
+    &lt;input type=file accept="video/*"&gt;
+</pre>
+<h3>动画特效开启加速</h3>
+<pre>
+.div {
+   -webkit-transform: translate3d(0, 0, 0);
+   -moz-transform: translate3d(0, 0, 0);
+   -ms-transform: translate3d(0, 0, 0);
+   transform: translate3d(0, 0, 0);
+  /* Other transform properties here */
+}
+</pre>
+<h3>设置placeholder时候 focus时候文字没有隐藏</h3>
+<pre>
+input:focus::-webkit-input-placeholder{
+    opacity: 0;
+}
+</pre>
+<h3>横屏监听</h3>
+<pre>
+var updateOrientation = function(){
+    if(window.orientation=='-90' || window.orientation=='90'){
+        $('.landscape-wrap').removeClass('hide');
+        console.log('为了更好的体验，请将手机/平板竖过来！');
+    }else{
+        $('.landscape-wrap').addClass('hide');
+        console.log('竖屏状态');
+    }
+};
+window.onorientationchange = updateOrientation;
+</pre>
+<h3>CSS3 Media Query，按范围兼容机型。</h3>
+<pre>
+/*iphone6*/
+@media only screen
+    and (min-device-width : 375px)
+    and (max-device-width : 667px)
+    and (orientation : portrait)
+    and (-webkit-min-device-pixel-ratio : 2)
+{
+    .page6 .ele-building{top: 69px;}
+    .page6 .ele-runner{top: 100px;}
+    .page6 .ele-pophome{top: 16px;}
+}
+</pre>
+<h3>类覆盖，这种方式适合直接为小屏或大屏做整体兼容。</h3>
+<p>首先，为小屏（大屏）加一个识别类，这里小于420表示为小屏幕（IPHONE4有上下导航栏）：</p>
+<pre>
+var bh = $(window).height();
+// 480 - 64 = 416 iphone4
+if(bh<420){
+    $('body').addClass('low-screen');
+}
+</pre>
+<p>然后，对应识别类加上要变动的元素，例如：</p>
+<pre>
+.page6 .ele-bg{top: 10px;}
+.low-screen .page6 .ele-bg{top: 0px;}
+</pre>
+<p>
+    1.大屏适当用zoom:倍率或者transform:scale(倍率)来增大元素，实测失真根本看不出来，设计师也满意（毕竟不用多做一张图( • ̀ω•́ )）；
+    2.小屏适当去掉一些元素，例如一些翻页提示，一些多余图标，可以让优雅降级，把它们 display:none掉。
+</p>
+<h3>图片压缩</h3>
+<p>压缩图片需要有好工具，这里推荐我们做的一个工具 <a href="">智图</a>，相关介绍请看 <a href="http://isux.tencent.com/zhitu.html">ISUX官博文章</a>。<br>
+    但是仍然有以下方式优化图片：<br>
+    1.尽量避免用PNG24。如果图片色彩要求不高，请使用PNG8；<br>
+    2.使用新格式，WEBP和BPG等新格式的到来，在不用考虑兼容的情况下请大胆尝试；<br>
+    3.用SVG和ICONFONT代替简单的图标；<br>
+    4.用糖饼和FUFU的 <a href="http://font-spider.org/"> 字蛛 </a>来代替艺术字体切图。</p>
+<h3>动画雪碧图</h3>
+<p>
+    涉及的动画十分多，用的元素也十分多，请务必使用雪碧图（Sprite）！<br>
+    网上的工具十分多，例如涛哥（ytzong）的CssGaga，AlloyTeam的GoPng等等，自动化构建工具Grunt和Gulp也提供了相应插件。<br>
+    这里要提一下的是如果页面图片实在太多，可以分雪碧图，例如分成1-3张，因为三张图片是可以同时加载的，这里牺牲多2个请求换来图片同时加载比一张图片慢慢加载要好。<br>
+    顺便提一下，我写动画的方法是每一页的动画分在一个import.css里面，然后最后在主样式中import进去，这样方便调试动画，也容易区分雪碧图，例如：<br>
+</p>
+<pre>
+     //style.css
+    @import url("reset.import.css");
+    @import url("loading.import.css");
+    @import url("m-animate-1.import.css");
+    @import url("m-animate-2.import.css");
+    @import url("m-animate-3.import.css");
+</pre>
+<h3>重力陀螺仪</h3>
+<p>
+    想让页面更有层次感，不妨让设计提供一些碎片元素，例如彩花，星星之类，然后把它们单独切出来放画面前景，使用陀螺仪伴随着手机运动碎片也跟着运动，多么好玩！<br>
+    这里提供一个工具可以轻松实现陀螺仪重力效果的：<a href="http://matthew.wagerfield.com/parallax/"> parallax.js </a><br>
+    用法简单，定义一个parallax-obj的父类，把需要动的元素加上layer的类，然后设置动的范围data-depth：<br>
+</p>
+<pre>
+
+&lt;div class="parallax-obj"&gt;
+    &lt;div class="layer ele-p1" data-depth="1.00"&gt;&lt;/div&gt;
+    &lt;div class="layer ele-p2" data-depth="0.80"&gt;&lt;/div&gt;
+    &lt;div class="layer ele-p3" data-depth="0.30"&gt;&lt;/div&gt;
+    &lt;div class="layer ele-p4" data-depth="0.30"&gt;&lt;/div&gt;
+    &lt;div class="layer ele-p5" data-depth="1.10"&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+</pre>
+<p>最后只需要调用：$(‘.parallax-obj’).parallax();就一切OK了。</p>
+
+</body>
+</html>
