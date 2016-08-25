@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>最常用的JS代码片段</title>
+    <link href="../../themes/prism.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<h1>最常用的JS代码片段</h1>
+<div class="wrapper">
+    <div class="menu">
+        <ul>
+            <li><a href="#intercept" class="list">字符串超出长度后截取,显示...</a></li>
+            <li><a href="#getHostName" class="list">获取域名主机</a></li>
+            <li><a href="#getHostName" class="list">获取域名主机</a></li>
+            <li><a href="#getHostName" class="list">获取域名主机获取域名主机获取域名主机</a></li>
+        </ul>
+    </div>
+    <div class="main">
+        <h3 id="intercept"><i></i>原生JavaScript实现字符串超出限制长度后截取并在结尾显示...</h3>
+        <div class="coding-panel">
+            <div class="result">
+                <h4><i></i>截取前:</h4>
+                <p class="before show">原生JavaScript实现字符串超出限制长度后截取并在结尾显示省略号</p>
+                <h4><i></i>截取后:</h4>
+                <div class="after show"></div>
+            </div>
+            <div class="coding">
+                <pre>
+                    <code class="language-JavaScript">
+function cutstr(str, len) {
+    var temp;
+    var icount = 0;
+    var patrn = /[^\x00-\xff]/;
+    var strre = "";
+    for (var i = 0; i < str.length; i++){
+        if(icount < len - 1){
+            temp = str.substr(i, 1);
+            if(patrn.exec(temp) == null){
+                icount = icount + 1;
+            } else {
+                icount = icount + 2;
+            }
+            strre += temp
+        } else {
+            break;
+        }
+    }
+    return strre + "...";
+}
+        </code>
+                </pre>
+            </div>
+        </div>
+
+        <h3 id="getHostName"><i></i>原生JavaScript获取域名主机</h3>
+        <div class="coding-panel">
+            <div class="result">
+                <h4><i></i>当前主机名:</h4>
+                <div class="host show"></div>
+            </div>
+            <div class="coding">
+                <pre>
+                    <code class="language-JavaScript">
+function getHost(url) {
+    var host = "null";
+    if (typeof url == "undefined" || null == url) {
+        url = window.location.href;
+    }
+    var regex = /^\w+\:\/\/([^\/]*).*/;
+    var match = url.match(regex);
+    if (typeof match != "undefined" && null != match) {
+        host = match[1];
+    }
+    return host;
+}
+                    </code>
+                </pre>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../../themes/prism.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>
