@@ -2,15 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3e3d68e9-14a7-45ea-88de-d88a7fe9c3df" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/JS/JS基础/coding-01/coding-01.js" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/JS/JS基础/coding-01/arr.png" afterPath="$PROJECT_DIR$/JS/JS基础/coding-01/images/arr.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/JS/JS基础/coding-01/pencil.png" afterPath="$PROJECT_DIR$/JS/JS基础/coding-01/images/pencil.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/JS/themes/prism.css" afterPath="$PROJECT_DIR$/JS/JS基础/coding-01/themes/prism.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/JS/themes/prism.js" afterPath="$PROJECT_DIR$/JS/JS基础/coding-01/themes/prism.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JS/.idea/workspace.xml" afterPath="$PROJECT_DIR$/JS/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JS/JS基础/coding-01/coding-01.html" afterPath="$PROJECT_DIR$/JS/JS基础/coding-01/coding-01.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JS/JS基础/coding-01/css/style.css" afterPath="$PROJECT_DIR$/JS/JS基础/coding-01/css/style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JS/JS基础/coding-01/js/script.js" afterPath="$PROJECT_DIR$/JS/JS基础/coding-01/js/script.js" />
     </list>
     <ignored path="codeSegment.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -34,7 +27,7 @@
         <entry file="file://$PROJECT_DIR$/JS/JS基础/coding-01/coding-01.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1280">
-              <caret line="86" column="20" selection-start-line="86" selection-start-column="20" selection-end-line="86" selection-end-column="20" />
+              <caret line="87" column="20" selection-start-line="87" selection-start-column="20" selection-end-line="87" selection-end-column="20" />
               <folding>
                 <element signature="n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
                 <element signature="n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
@@ -48,11 +41,9 @@
       <file leaf-file-name="script.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/JS/JS基础/coding-01/js/script.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="389">
-              <caret line="56" column="3" selection-start-line="56" selection-start-column="3" selection-end-line="56" selection-end-column="3" />
-              <folding>
-                <element signature="e#230#764#0" expanded="false" />
-              </folding>
+            <state relative-caret-position="256">
+              <caret line="65" column="29" selection-start-line="65" selection-start-column="29" selection-end-line="65" selection-end-column="29" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -118,7 +109,7 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="769" />
+    <option name="x" value="52" />
     <option name="y" value="23" />
     <option name="width" value="1151" />
     <option name="height" value="1053" />
@@ -149,10 +140,49 @@
     </navigator>
     <panes>
       <pane id="ProjectPane">
-        <subPane />
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="codeSegment" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="codeSegment" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="codeSegment" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="codeSegment" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="codeSegment" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="JS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="JS基础" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="coding-01" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -256,18 +286,18 @@
       <workItem from="1468394721006" duration="1534000" />
       <workItem from="1468548423564" duration="3813000" />
       <workItem from="1472091689323" duration="15097000" />
-      <workItem from="1472120143844" duration="587000" />
+      <workItem from="1472120143844" duration="623000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="29346000" />
+    <option name="totallyTimeSpent" value="29382000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="769" y="23" width="1151" height="1053" extended-state="0" />
+    <frame x="52" y="23" width="1151" height="1053" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22155689" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22123894" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -615,7 +645,7 @@
     <entry file="file://$PROJECT_DIR$/JS/JS基础/coding-01/coding-01.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1280">
-          <caret line="86" column="20" selection-start-line="86" selection-start-column="20" selection-end-line="86" selection-end-column="20" />
+          <caret line="87" column="20" selection-start-line="87" selection-start-column="20" selection-end-line="87" selection-end-column="20" />
           <folding>
             <element signature="n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
@@ -627,11 +657,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/JS/JS基础/coding-01/js/script.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="389">
-          <caret line="56" column="3" selection-start-line="56" selection-start-column="3" selection-end-line="56" selection-end-column="3" />
-          <folding>
-            <element signature="e#230#764#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="256">
+          <caret line="65" column="29" selection-start-line="65" selection-start-column="29" selection-end-line="65" selection-end-column="29" />
+          <folding />
         </state>
       </provider>
     </entry>

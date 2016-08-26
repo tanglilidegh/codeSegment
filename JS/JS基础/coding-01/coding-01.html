@@ -17,6 +17,7 @@
             <li><a href="#getHostName" class="list">获取域名主机</a></li>
             <li><a href="#goTop" class="list">返回顶部的通用方法</a></li>
             <li><a href="#getHostName" class="list">获取域名主机</a></li>
+            <li><a href="#getCode" class="list">js获取验证码倒计时效果</a></li>
         </ul>
     </div>
     <div class="main">
@@ -113,7 +114,43 @@ backTop('goTop');
                 </pre>
             </div>
         </div>
-        <h3 id="browser-info"><i></i>返回顶部的通用方法</h3>
+        <h3 id="getCode"><i></i>js获取验证码倒计时效果</h3>
+        <div class="coding-panel">
+            <div class="result">
+                <h4><i></i>请看页面右下角:</h4>
+                <div class="input-line">
+                    <label>验证码:</label>
+                    <input class="codes" type="text" placeholder="请输入验证码">
+                    <input class="codes-btn" type="button" value="获取验证码">
+                </div>
+            </div>
+            <div class="coding">
+                <pre>
+                    <code class="language-JavaScript">
+var wait = 60;
+function time(o) {
+    if (wait == 0) {
+        o.removeAttribute("disabled");
+        o.value = "获取验证码";
+        wait = 60;
+    } else {
+        o.setAttribute("disabled", true);
+        o.value = "重新发送(" + wait + ")";
+        wait--;
+        setTimeout(function () {
+                time(o)
+            },
+            1000)
+    }
+}
+document.querySelector(".codes-btn").onclick = function () {
+    time(this);
+};
+
+                    </code>
+                </pre>
+            </div>
+        </div>
     </div>
 </div>
 <script src="js/script.js"></script>
