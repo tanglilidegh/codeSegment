@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3e3d68e9-14a7-45ea-88de-d88a7fe9c3df" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JS/.idea/workspace.xml" afterPath="$PROJECT_DIR$/JS/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JS/JS基础/coding-01/coding-01.html" afterPath="$PROJECT_DIR$/JS/JS基础/coding-01/coding-01.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="codeSegment.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -26,11 +25,9 @@
       <file leaf-file-name="coding-01.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/JS/JS基础/coding-01/coding-01.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1280">
-              <caret line="87" column="20" selection-start-line="87" selection-start-column="20" selection-end-line="87" selection-end-column="20" />
+            <state relative-caret-position="800">
+              <caret line="25" column="31" selection-start-line="25" selection-start-column="31" selection-end-line="25" selection-end-column="31" />
               <folding>
-                <element signature="n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
                 <element signature="n#code#0;n#pre#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
                 <element signature="n#code#0;n#pre#0;n#div#1;n#div#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
               </folding>
@@ -41,9 +38,15 @@
       <file leaf-file-name="script.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/JS/JS基础/coding-01/js/script.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="256">
-              <caret line="65" column="29" selection-start-line="65" selection-start-column="29" selection-end-line="65" selection-end-column="29" />
-              <folding />
+            <state relative-caret-position="288">
+              <caret line="35" column="3" selection-start-line="35" selection-start-column="3" selection-end-line="35" selection-end-column="3" />
+              <folding>
+                <element signature="e#96#818#0" expanded="false" />
+                <element signature="e#881#1333#0" expanded="false" />
+                <element signature="n#!!block;n#backTop#0" expanded="false" />
+                <element signature="n#!!block;n#time#0" expanded="false" />
+                <element signature="e#2546#2565#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -139,6 +142,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -181,8 +186,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -192,6 +195,7 @@
     <property name="HbShouldOpenHtmlAsHb" value="" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="ignore_missing_gitignore" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -287,17 +291,19 @@
       <workItem from="1468548423564" duration="3813000" />
       <workItem from="1472091689323" duration="15097000" />
       <workItem from="1472120143844" duration="623000" />
+      <workItem from="1472217345568" duration="774000" />
+      <workItem from="1472435978374" duration="100000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="29382000" />
+    <option name="totallyTimeSpent" value="30256000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="52" y="23" width="1151" height="1053" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22123894" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22123894" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -612,7 +618,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="226">
           <caret line="215" column="27" selection-start-line="215" selection-start-column="27" selection-end-line="215" selection-end-column="27" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -644,11 +649,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/JS/JS基础/coding-01/coding-01.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1280">
-          <caret line="87" column="20" selection-start-line="87" selection-start-column="20" selection-end-line="87" selection-end-column="20" />
+        <state relative-caret-position="800">
+          <caret line="25" column="31" selection-start-line="25" selection-start-column="31" selection-end-line="25" selection-end-column="31" />
           <folding>
-            <element signature="n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#code#0;n#pre#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#code#0;n#pre#0;n#div#1;n#div#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
           </folding>
@@ -657,9 +660,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/JS/JS基础/coding-01/js/script.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="256">
-          <caret line="65" column="29" selection-start-line="65" selection-start-column="29" selection-end-line="65" selection-end-column="29" />
-          <folding />
+        <state relative-caret-position="288">
+          <caret line="35" column="3" selection-start-line="35" selection-start-column="3" selection-end-line="35" selection-end-column="3" />
+          <folding>
+            <element signature="e#96#818#0" expanded="false" />
+            <element signature="e#881#1333#0" expanded="false" />
+            <element signature="n#!!block;n#backTop#0" expanded="false" />
+            <element signature="n#!!block;n#time#0" expanded="false" />
+            <element signature="e#2546#2565#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
