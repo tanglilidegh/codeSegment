@@ -1,12 +1,14 @@
 /**
  * Created by tanglili on 16/8/25.
  */
+
 /*
-* 字符串超出长度后截取,显示...
-*/
+ * 字符串超出长度后截取,显示...
+ */
 var intercept = function () {
     var before = document.querySelector('.before');
     var after = document.querySelector('.after');
+
     function cutstr(str, len) {
         var temp;
         var icount = 0;
@@ -27,9 +29,35 @@ var intercept = function () {
         }
         return strre + "...";
     }
+
     after.innerText = cutstr(before.innerText, 10);
 };
 intercept();
+
+/*
+ * 另一种截取字符的方式...
+ */
+var getByteVal = function (val, max) {
+    var returnValue = '';
+    var byteValLen = 0;
+    for (var i = 0; i < val.length; i++) {
+        if (val[i].match(/[^\x00-\xff]/ig) != null)
+            byteValLen += 2;
+        else
+            byteValLen += 1;
+        if (byteValLen > max)
+            break;
+        returnValue += val[i];
+    }
+    return returnValue;
+};
+
+$('#txt').bind('keyup', function () {
+    var val = this.value;
+    if (val.replace(/[^\x00-\xff]/g, "**").length > 14) {
+        this.value = getByteVal(val, 20);
+    }
+});
 
 /*
  * 获取域名主机
@@ -47,6 +75,7 @@ var getHostName = function () {
         }
         return host;
     }
+
     var host = document.querySelector('.host');
     host.innerText = getHost();
 };
@@ -68,8 +97,8 @@ function backTop(btnId) {
         this.timer = setInterval(function () {
             d.scrollTop -= Math.ceil((d.scrollTop + b.scrollTop) * 0.1);
             b.scrollTop -= Math.ceil((d.scrollTop + b.scrollTop) * 0.1);
-            if((d.scrollTop + b.scrollTop) == 0) clearInterval(btn.timer, window.onscroll = set);
-        },10);
+            if ((d.scrollTop + b.scrollTop) == 0) clearInterval(btn.timer, window.onscroll = set);
+        }, 10);
     };
     function set() {
         btn.style.display = (d.scrollTop + b.scrollTop > 100) ? 'block' : 'none';
@@ -99,4 +128,3 @@ function time(o) {
 document.querySelector(".codes-btn").onclick = function () {
     time(this);
 };
-

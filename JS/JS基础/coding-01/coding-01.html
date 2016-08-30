@@ -14,12 +14,17 @@
     <div class="menu">
         <ul>
             <li><a href="#intercept" class="list">字符串超出长度后截取,显示...</a></li>
+            <li><a href="#intercept2" class="list">针对输入框字符长度限制</a></li>
             <li><a href="#getHostName" class="list">获取域名主机</a></li>
             <li><a href="#goTop" class="list">返回顶部的通用方法</a></li>
             <li><a href="#getHostName" class="list">获取域名主机</a></li>
             <li><a href="#getCode" class="list">js获取验证码倒计时效果</a></li>
+            <li><a href="#constRegExp" class="list">常用的正则表达式</a></li>
+            <li><a href="#wideHigh" class="list">js获取宽高</a></li>
+            <li><a href="#jQuery-wideHigh" class="list">jQuery获取宽高</a></li>
         </ul>
     </div>
+
     <div class="main">
         <h3 id="intercept"><i></i>字符串超出长度后截取,显示...</h3>
         <div class="coding-panel">
@@ -55,7 +60,41 @@ function cutstr(str, len) {
         </code>
                 </pre>
             </div>
+            <h3 id="intercept2"><i></i>专门针对输入框字符长度限制用</h3>
+            <div class="result">
+                <h4><i></i>另一种截取方式:</h4>
+                <input type="text" id="txt">
+            </div>
+            <div class="coding">
+                <pre>
+                    <code class="language-JavaScript">
+var getByteVal = function (val, max) {
+    var returnValue = '';
+    var byteValLen = 0;
+    for (var i = 0; i < val.length; i++) {
+        if (val[i].match(/[^\x00-\xff]/ig) != null)
+            byteValLen += 2;
+        else
+            byteValLen += 1;
+        if (byteValLen > max)
+            break;
+        returnValue += val[i];
+    }
+    return returnValue;
+};
+
+$('#txt').bind('keyup', function () {
+    var val = this.value;
+    if (val.replace(/[^\x00-\xff]/g, "**").length > 14) {
+        this.value = getByteVal(val, 20);
+    }
+});</code>
+                </pre>
+            </div>
         </div>
+
+
+
         <h3 id="getHostName"><i></i>获取域名主机</h3>
         <div class="coding-panel">
             <div class="result">
@@ -81,6 +120,7 @@ function getHost(url) {
                 </pre>
             </div>
         </div>
+
         <h3 id="goTop"><i></i>返回顶部的通用方法</h3>
         <div class="coding-panel">
             <div class="result">
@@ -114,6 +154,7 @@ backTop('goTop');
                 </pre>
             </div>
         </div>
+
         <h3 id="getCode"><i></i>js获取验证码倒计时效果</h3>
         <div class="coding-panel">
             <div class="result">
@@ -151,8 +192,73 @@ document.querySelector(".codes-btn").onclick = function () {
                 </pre>
             </div>
         </div>
+        <h3 id="constRegExp"><i></i>常用的正则表达式</h3>
+        <div class="coding-panel">
+            <div class="coding">
+                <pre>
+                    <code class="language-JavaScript">
+//匹配字母、数字、中文字符
+/^([A-Za-z0-9]|[\u4e00-\u9fa5])*$/
+//验证邮箱
+/^\w+@([0-9a-zA-Z]+[.])+[a-z]{2,4}$/
+//验证手机号
+/^1[3|5|8|7]\d{9}$/
+//验证URL
+/^http:\/\/.+\./
+//验证身份证号码
+/(^\d{15}$)|(^\d{17}([0-9]|X|x)$)/
+//匹配中文字符的正则表达式
+/[\u4e00-\u9fa5]/
+//匹配双字节字符(包括汉字在内)
+/[^\x00-\xff]/</code>
+                </pre>
+            </div>
+        </div>
+
+        <h3 id="wideHigh"><i></i>js获取宽高</h3>
+        <div class="coding-panel">
+            <div class="coding">
+                <pre><code class="language-JavaScript">原文链接：http://caibaojian.com/288.html
+//code from http://caibaojian.com/288.html
+//网页可见区域宽： document.body.clientWidth
+//网页可见区域高： document.body.clientHeight
+//网页可见区域宽： document.body.offsetWidth (包括边线的宽)
+//网页可见区域高： document.body.offsetHeight (包括边线的高)
+//网页正文全文宽： document.body.scrollWidth
+//网页正文全文高： document.body.scrollHeight
+//网页被卷去的高： document.body.scrollTop
+//网页被卷去的左： document.body.scrollLeft
+//网页正文部分上： window.screenTop
+//网页正文部分左： window.screenLeft
+//屏幕分辨率的高： window.screen.height
+//屏幕分辨率的宽： window.screen.width
+//屏幕可用工作区高度： window.screen.availHeight
+//屏幕可用工作区宽度： window.screen.availWidth</code></pre>
+            </div>
+        </div>
+
+        <h3 id="jQuery-wideHigh"><i></i>jQuery获取宽高</h3>
+        <div class="coding-panel">
+            <div class="coding">
+                <pre><code class="language-JavaScript">原文链接：http://caibaojian.com/288.html
+//code from http://caibaojian.com/288.html
+jquery获取浏览器显示区域的高度 ： $(window).height();
+获取浏览器显示区域的宽度 ：$(window).width();
+获取页面的文档高度 ：$(document).height();
+获取页面的文档宽度 ：$(document).width();获取滚动条到顶部的垂直高度 ：$(document).scrollTop();
+获取滚动条到左边的垂直宽度 ：$(document).scrollLeft();计算元素位置和偏移量
+offset方法是一个很有用的方法，它返回包装集中第一个元素的偏移信息。默认情况下是相对body的偏移信息。结果包含 top和left两个属性。
+offset(options, results)
+options.relativeTo　　指定相对计 算偏移位置的祖先元素。这个元素应该是relative或absolute定位。省略则相对body。
+options.scroll　　是否把 滚动条计算在内，默认TRUE
+options.padding　　是否把padding计算在内，默认false
+options.margin 　　是否把margin计算在内，默认true
+options.border　　是否把边框计算在内，默认true</code></pre>
+            </div>
+        </div>
     </div>
 </div>
+<script src="js/jquery-3.1.0.min.js"></script>
 <script src="js/script.js"></script>
 <script src="themes/prism.js"></script>
 </body>

@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>不常用到的JS代码</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="themes/prism.css">
+</head>
+<body>
+<h1>不常用到的JS代码</h1>
+<div class="wrapper">
+    <div class="menu">
+        <ul>
+            <li><a href="#stopPropagation" class="list">阻止冒泡</a></li>
+            <li><a href="#isWeixin" class="list">检测是否是微信浏览器</a></li>
+            <li><a href="#isBrowser" class="list">js判断是否移动端及浏览器内核</a></li>
+            <li><a href="#setCookie" class="list">原生JavaScript设置cookie值</a></li>
+            <li><a href="#getCookie" class="list">原生JavaScript获取cookie值</a></li>
+            <li><a href="#checkAll" class="list">原生JavaScript实现checkbox全选与全不选</a></li>
+            <li><a href="#dateFormat" class="list">原生JavaScript时间日期格式转换</a></li>
+        </ul>
+    </div>
+
+    <div class="main">
+        <h3 id="stopPropagation"><i></i>阻止冒泡</h3>
+        <div class="coding-panel">
+            <div class="result">
+                <h4><i></i>阻止冒泡:</h4>
+                <h4><i></i>js方法实现:</h4>
+                <a href="#" id="need_hide">need_hide</a>
+            </div>
+            <div class="coding">
+                <pre>
+                    <code class="language-JavaScript">
+var stopPropagation = function (e) {
+    e = e || window.event;
+    if(e.stopPropagation){ // W3C阻止冒泡方法
+        e.stopPropagation();
+    } else {
+        e.cancelBubble = true; // IE阻止冒泡方法
+    }
+};
+document.getElementById('need_hide').onclick = function (e) {
+    stopPropagation(e);
+};</code>
+                </pre>
+            </div>
+            <div class="result">
+                <h4><i></i>jQuery方法实现:</h4>
+                <button id="btn">btn</button>
+            </div>
+            <div class="coding">
+                <pre>
+                    <code class="language-JavaScript">
+$('.btn').click(function () {
+    return false; // 直接在方法里 return false 即可
+});</code>
+                </pre>
+            </div>
+        </div>
+
+        <h3 id="isWeixin"><i></i>检测是否是微信浏览器</h3>
+        <div class="coding-panel">
+            <div class="result">
+                <h4><i></i>检测是否是微信浏览器:</h4>
+            </div>
+            <div class="coding">
+                <pre>
+                    <code class="language-JavaScript">
+function is_weixin() {
+    var ua = navigator.userAgent.toLowerCase();
+    if(ua.match(/MicroMessenger/i) == "micromessenger"){
+        return true;
+    } else {
+        return false;
+    }
+}
+$(function () {
+    alert(is_weixin());
+});</code>
+                </pre>
+            </div>
+        </div>
+
+        <h3 id="isBrowser"><i></i>js判断是否移动端及浏览器内核</h3>
+        <div class="coding-panel">
+            <div class="result">
+                <h4><i></i>js判断是否移动端及浏览器内核:</h4>
+            </div>
+            <div class="coding">
+                <pre><code class="language-JavaScript">
+var browser = {
+    versions: function () {
+        var u = navigator.userAgent;
+        return {
+            trident: u.indexOf('Trident') > -1, // IE内核
+            presto: u.indexOf('Presto') > -1, // opera 内核
+            webKit: u.indexOf('AppleWebKit') > -1, // 苹果,谷歌 内核
+            gecko: u.indexOf('Firefox') > -1,  // 火狐内核Gecko
+            mobile: !!u.match(/AppleWebKit.*Mobile.*/), // 是否为移动终端
+            ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Max OS X/), //ios
+            android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1, // Android
+            iPhone: u.indexOf('iPhone') > -1, // iPhone
+            iPad: u.indexOf('iPad') > -1, // iPad
+            webApp: u.indexOf('Safari') > -1 // Safari
+        };
+    }()
+};
+$(function () {
+    if(browser.versions.mobile || browser.versions.ios || browser.versions.android || browser.versions.iPhone || browser.versions.iPad){
+        alert('移动端');
+    }
+});</code></pre>
+            </div>
+        </div>
+
+        <h3 id="setCookie"><i></i>原生JavaScript设置cookie值</h3>
+        <div class="coding-panel">
+            <div class="result">
+                <h4><i></i>原生JavaScript设置cookie值:</h4>
+            </div>
+            <div class="coding">
+                <pre><code class="language-JavaScript">function setCookie(name, value, Hours) {
+    var d = new Date();
+    var offset = 8;
+    // getTimezoneOffset() 返回 本地时间与 GMT 时间之间的时间差，以分钟为单位。
+    var utc = d.getTime() + (d.getTimezoneOffset() * 60000);
+    var nd = utc + (3600000 * offset);
+    var exp = new Date(nd);
+    exp.setTime(exp.getTime() + Hours * 60 * 60 * 1000);
+    document.cookie = name + '=' + escape(value) + ';path=/;expires=' + exp.toGMTString() + ';domain=360doc.com;';
+}</code></pre>
+            </div>
+        </div>
+
+        <h3 id="getCookie"><i></i>原生JavaScript获取cookie值</h3>
+        <div class="coding-panel">
+            <div class="result">
+                <h4><i></i>原生JavaScript获取cookie值:</h4>
+            </div>
+            <div class="coding">
+                <pre><code class="language-JavaScript">function getCookie(name) {
+    var arr = document.cookie.match(new RegExp("(^| )" + name + "=([^;]*)(;|$)"));
+    if (arr != null) return unescape(arr[2]);
+    return null
+}  </code></pre>
+            </div>
+        </div>
+
+        <h3 id="checkAll"><i></i>原生JavaScript实现checkbox全选与全不选 </h3>
+        <div class="coding-panel">
+            <div class="result">
+                <h4><i></i>原生JavaScript实现checkbox全选与全不选</h4>
+            </div>
+            <div class="coding">
+                <pre><code class="language-JavaScript">function checkAll() {
+    var selectall = document.getElementById("selectall");
+    var allbox = document.getElementsByName("allbox");
+    if (selectall.checked) {
+        for (var i = 0; i < allbox.length; i++) {
+            allbox[i].checked = true;
+        }
+    } else {
+        for (var i = 0; i < allbox.length; i++) {
+            allbox[i].checked = false;
+        }
+    }
+}</code></pre>
+            </div>
+        </div>
+
+        <h3 id="dateFormat"><i></i></h3>
+        <div class="coding-panel">
+            <div class="result">
+                <h4><i></i>原生JavaScript时间日期格式转换</h4>
+            </div>
+            <div class="coding">
+                <pre><code class="language-JavaScript">Date.prototype.toString = function (format, loc) {
+    var time = {};
+    time.Year = this.getFullYear();
+    time.TYear = ("" + time.Year).substr(2);
+    time.Month = this.getMonth() + 1;
+    time.TMonth = time.Month < 10 ? "0" + time.Month : time.Month;
+    time.Day = this.getDate();
+    time.TDay = time.Day < 10 ? "0" + time.Day : time.Day;
+    time.Hour = this.getHours();
+    time.THour = time.Hour < 10 ? "0" + time.Hour : time.Hour;
+    time.hour = time.Hour < 13 ? time.Hour : time.Hour - 12;
+    time.Thour = time.hour < 10 ? "0" + time.hour : time.hour;
+    time.Minute = this.getMinutes();
+    time.TMinute = time.Minute < 10 ? "0" + time.Minute : time.Minute;
+    time.Second = this.getSeconds();
+    time.TSecond = time.Second < 10 ? "0" + time.Second : time.Second;
+    time.Millisecond = this.getMilliseconds();
+    time.Week = this.getDay();
+    var MMMArrEn = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+    var MMMArr = ["一月", "二月", "三月", "四月", "五月", "六月", "七月", "八月", "九月", "十月", "十一月", "十二月"];
+    var WeekArrEn = ["Sun", "Mon", "Tue", "Web", "Thu", "Fri", "Sat"];
+    var WeekArr = ["星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六"];
+    var oNumber = time.Millisecond / 1000;
+    if (format != undefined && format.replace(/\s/g, "").length > 0) {
+        if (loc != undefined && loc == "en") {
+            MMMArr = MMMArrEn.slice(0);
+            WeekArr = WeekArrEn.slice(0);
+        }
+        format = format
+            .replace(/yyyy/ig, time.Year)
+            .replace(/yyy/ig, time.Year)
+            .replace(/yy/ig, time.TYear)
+            .replace(/y/ig, time.TYear)
+            .replace(/MMM/g, MMMArr[time.Month - 1])
+            .replace(/MM/g, time.TMonth)
+            .replace(/M/g, time.Month)
+            .replace(/dd/ig, time.TDay)
+            .replace(/d/ig, time.Day)
+            .replace(/HH/g, time.THour)
+            .replace(/H/g, time.Hour)
+            .replace(/hh/g, time.Thour)
+            .replace(/h/g, time.hour)
+            .replace(/mm/g, time.TMinute)
+            .replace(/m/g, time.Minute)
+            .replace(/ss/ig, time.TSecond)
+            .replace(/s/ig, time.Second)
+            .replace(/fff/ig, time.Millisecond)
+            .replace(/ff/ig, oNumber.toFixed(2) * 100)
+            .replace(/f/ig, oNumber.toFixed(1) * 10)
+            .replace(/EEE/g, WeekArr[time.Week]);
+    } else {
+        format = time.Year + "-" + time.Month + "-" + time.Day + " " + time.Hour + ":" + time.Minute + ":" + time.Second;
+    }
+    return format;
+};
+var d = new Date();
+// console.log(d.toString());
+//2012-7-27 9:26:52 console.log(d.toString(""));
+// 2012-7-27 9:26:52 console.log(d.toString("yyyy-MM-dd HH:mm:ss"));
+// 2012-07-27 09:26:52 console.log(d.toString("yyyy年MM月dd日 HH:mm:ss"));
+// 2012年07月27日 09:26:52 console.log(d.toString("yyyy-MM-dd HH:mm:ss fff"));
+// 2012-07-27 09:26:52 237 console.log(d.toString("yyyy年 MMM dd EEE"));
+// 2012年 七月 27 星期五 console.log(d.toString("yyyy MMM dd EEE","en"));
+// 2012 Jul 27 Fri</code></pre>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="js/jquery-3.1.0.min.js"></script>
+<script src="js/script.js"></script>
+<script src="themes/prism.js"></script>
+</body>
+</html>

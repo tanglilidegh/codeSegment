@@ -62,7 +62,7 @@ h4  i{
 }
 
 .wrapper {
-    /*position: relative;*/
+    position: relative;
     width: 90%;
     margin: 0 auto;
     background: #fff;
@@ -74,9 +74,9 @@ h4  i{
 }
 
 .menu {
-    position: fixed;
-    left: 5%;
-    top: 75px;
+    position: absolute;
+    left: 0;
+    top: 0;
     width: 20%;
     padding: 20px 0 0 20px;
 }
