@@ -3,8 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="3e3d68e9-14a7-45ea-88de-d88a7fe9c3df" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JS/JS基础/coding-01/coding-01.html" afterPath="$PROJECT_DIR$/JS/JS基础/coding-01/coding-01.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JS/JS基础/coding-01/css/style.css" afterPath="$PROJECT_DIR$/JS/JS基础/coding-01/css/style.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JS/JS基础/coding-01/js/script.js" afterPath="$PROJECT_DIR$/JS/JS基础/coding-01/js/script.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JS/JS基础/inactive/css/style.css" afterPath="$PROJECT_DIR$/JS/JS基础/inactive/css/style.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JS/JS基础/inactive/inactive-01.html" afterPath="$PROJECT_DIR$/JS/JS基础/inactive/inactive-01.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JS/JS基础/inactive/js/script.js" afterPath="$PROJECT_DIR$/JS/JS基础/inactive/js/script.js" />
     </list>
     <ignored path="codeSegment.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -24,52 +26,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="coding-01.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/JS/JS基础/coding-01/coding-01.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2818">
-              <caret line="251" column="74" selection-start-line="251" selection-start-column="74" selection-end-line="251" selection-end-column="74" />
-              <folding>
-                <element signature="n#code#0;n#pre#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#div#0;n#div#3;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#code#0;n#pre#0;n#div#1;n#div#3;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#code#0;n#pre#0;n#div#0;n#div#4;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="script.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/JS/JS基础/coding-01/js/script.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="714">
-              <caret line="130" column="0" selection-start-line="130" selection-start-column="0" selection-end-line="130" selection-end-column="0" />
-              <folding>
-                <element signature="e#99#823#0" expanded="false" />
-                <element signature="e#1454#1907#0" expanded="false" />
-                <element signature="n#!!block;n#backTop#0" expanded="false" />
-                <element signature="n#!!block;n#time#0" expanded="false" />
-                <element signature="e#3122#3141#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/JS/JS基础/coding-01/css/style.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="416">
-              <caret line="82" column="12" selection-start-line="82" selection-start-column="12" selection-end-line="82" selection-end-column="12" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="inactive-01.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/JS/JS基础/inactive/inactive-01.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="258">
-              <caret line="202" column="70" selection-start-line="202" selection-start-column="70" selection-end-line="202" selection-end-column="70" />
+            <state relative-caret-position="482">
+              <caret line="361" column="11" selection-start-line="361" selection-start-column="11" selection-end-line="361" selection-end-column="11" />
               <folding>
                 <element signature="n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
                 <element signature="n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
@@ -79,17 +40,13 @@
                 <element signature="n#code#0;n#pre#0;n#div#3;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
                 <element signature="n#div#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
                 <element signature="n#code#0;n#pre#0;n#div#1;n#div#2;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#code#0;n#pre#0;n#div#1;n#div#3;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#code#0;n#pre#0;n#div#1;n#div#4;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#code#0;n#pre#0;n#div#1;n#div#5;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#code#0;n#pre#0;n#div#1;n#div#6;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#code#0;n#pre#0;n#div#1;n#div#7;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#code#0;n#pre#0;n#div#1;n#div#8;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/JS/JS基础/inactive/css/style.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-4446">
-              <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -97,8 +54,8 @@
       <file leaf-file-name="script.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/JS/JS基础/inactive/js/script.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="613">
-              <caret line="134" column="2" selection-start-line="117" selection-start-column="0" selection-end-line="134" selection-end-column="2" />
+            <state relative-caret-position="261">
+              <caret line="151" column="0" selection-start-line="151" selection-start-column="0" selection-end-line="161" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -135,12 +92,13 @@
         <option value="$PROJECT_DIR$/JS/JS基础/coding-01/coding-01.js" />
         <option value="$PROJECT_DIR$/JS/themes/prism.js" />
         <option value="$PROJECT_DIR$/JS/themes/prism.css" />
-        <option value="$PROJECT_DIR$/JS/JS基础/inactive/js/script.js" />
         <option value="$PROJECT_DIR$/JS/JS基础/coding-01/js/jquery.pin.js" />
         <option value="$PROJECT_DIR$/JS/JS基础/coding-01/js/stickUp.min.js" />
         <option value="$PROJECT_DIR$/JS/JS基础/coding-01/css/style.css" />
-        <option value="$PROJECT_DIR$/JS/JS基础/coding-01/coding-01.html" />
         <option value="$PROJECT_DIR$/JS/JS基础/coding-01/js/script.js" />
+        <option value="$PROJECT_DIR$/JS/JS基础/coding-01/coding-01.html" />
+        <option value="$PROJECT_DIR$/JS/JS基础/inactive/css/style.css" />
+        <option value="$PROJECT_DIR$/JS/JS基础/inactive/js/script.js" />
         <option value="$PROJECT_DIR$/JS/JS基础/inactive/inactive-01.html" />
       </list>
     </option>
@@ -296,12 +254,12 @@
       <workItem from="1472120143844" duration="623000" />
       <workItem from="1472217345568" duration="774000" />
       <workItem from="1472435978374" duration="100000" />
-      <workItem from="1472538094817" duration="10659000" />
+      <workItem from="1472538094817" duration="15537000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="40915000" />
+    <option name="totallyTimeSpent" value="45793000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="820" y="23" width="1100" height="1053" extended-state="0" />
@@ -338,13 +296,6 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/JS/JS基础/inactive/js/script.js</url>
-          <line>121</line>
-          <properties />
-        </line-breakpoint>
-      </breakpoints>
       <option name="time" value="1" />
     </breakpoint-manager>
     <watches-manager />
@@ -618,22 +569,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/JS/JS基础/inactive/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-4446">
-          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/JS/JS基础/inactive/js/script.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="613">
-          <caret line="134" column="2" selection-start-line="117" selection-start-column="0" selection-end-line="134" selection-end-column="2" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/JS/JS基础/coding-01/js/jquery.pin.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="256">
@@ -656,43 +591,59 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/JS/JS基础/coding-01/js/script.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="714">
-          <caret line="130" column="0" selection-start-line="130" selection-start-column="0" selection-end-line="130" selection-end-column="0" />
+        <state relative-caret-position="101">
+          <caret line="155" column="0" selection-start-line="155" selection-start-column="0" selection-end-line="163" selection-end-column="1" />
           <folding>
             <element signature="e#99#823#0" expanded="false" />
             <element signature="e#1454#1907#0" expanded="false" />
             <element signature="n#!!block;n#backTop#0" expanded="false" />
-            <element signature="n#!!block;n#time#0" expanded="false" />
-            <element signature="e#3122#3141#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/JS/JS基础/coding-01/coding-01.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2818">
-          <caret line="251" column="74" selection-start-line="251" selection-start-column="74" selection-end-line="251" selection-end-column="74" />
-          <folding>
-            <element signature="n#code#0;n#pre#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#0;n#div#3;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#code#0;n#pre#0;n#div#1;n#div#3;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#code#0;n#pre#0;n#div#0;n#div#4;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/JS/JS基础/coding-01/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="416">
-          <caret line="82" column="12" selection-start-line="82" selection-start-column="12" selection-end-line="82" selection-end-column="12" />
+        <state relative-caret-position="192">
+          <caret line="63" column="0" selection-start-line="63" selection-start-column="0" selection-end-line="81" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JS/JS基础/inactive/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="672">
+          <caret line="81" column="1" selection-start-line="81" selection-start-column="1" selection-end-line="81" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JS/JS基础/coding-01/coding-01.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="258">
+          <caret line="280" column="39" selection-start-line="280" selection-start-column="39" selection-end-line="280" selection-end-column="39" />
+          <folding>
+            <element signature="n#code#0;n#pre#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#code#0;n#pre#0;n#div#1;n#div#3;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#code#0;n#pre#0;n#div#0;n#div#4;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#code#0;n#pre#0;n#div#0;n#div#5;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#code#0;n#pre#0;n#div#0;n#div#6;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#code#0;n#pre#0;n#div#0;n#div#7;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JS/JS基础/inactive/js/script.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="261">
+          <caret line="151" column="0" selection-start-line="151" selection-start-column="0" selection-end-line="161" selection-end-column="1" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/JS/JS基础/inactive/inactive-01.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="258">
-          <caret line="202" column="70" selection-start-line="202" selection-start-column="70" selection-end-line="202" selection-end-column="70" />
+        <state relative-caret-position="482">
+          <caret line="361" column="11" selection-start-line="361" selection-start-column="11" selection-end-line="361" selection-end-column="11" />
           <folding>
             <element signature="n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
@@ -702,6 +653,12 @@
             <element signature="n#code#0;n#pre#0;n#div#3;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#div#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#code#0;n#pre#0;n#div#1;n#div#2;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#code#0;n#pre#0;n#div#1;n#div#3;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#code#0;n#pre#0;n#div#1;n#div#4;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#code#0;n#pre#0;n#div#1;n#div#5;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#code#0;n#pre#0;n#div#1;n#div#6;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#code#0;n#pre#0;n#div#1;n#div#7;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#code#0;n#pre#0;n#div#1;n#div#8;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
           </folding>
         </state>
       </provider>

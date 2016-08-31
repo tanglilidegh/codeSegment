@@ -135,8 +135,31 @@ Date.prototype.Format = function(formatStr) {
 };
 
 
+/**
+ * 字符串反序输出
+ * @return {string}
+ */
+function IsReverse(text) {
+    return text.split('').reverse().join('');
+}
+var oldText = $('#oldText').text();
+$('#newText').text(IsReverse(oldText));
 
+/*
+*  获取js所在路径
+*/
 
+function getJsDir(src) {
+    var script = null;
+    if(src){
+        script = [].filter.call(document.scripts,function (v) {
+            return v.src.indexOf(src) != -1;
+        })[0];
+    } else {
+        script = document.scripts[document.scripts.length - 1];
+    }
+    return script ? script.src.substr(0, script.src.lastIndexOf('/')) : script;
+}
 
 
 

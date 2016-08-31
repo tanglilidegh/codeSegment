@@ -128,3 +128,60 @@ function time(o) {
 document.querySelector(".codes-btn").onclick = function () {
     time(this);
 };
+
+/*
+ * 获得URL中GET参数值
+ */
+
+// 用法：如果地址是 test.htm?t1=1&t2=2&t3=3, 那么能取得：GET["t1"], GET["t2"], GET["t3"]
+function getUrlArg() {
+    var queryStr = window.location.href.split('?');
+    var GETs,GET,tmp_arr,key,i;
+    if (queryStr[1]) {
+        GETs = queryStr[1].split('&');
+        GET = [];
+        for (i = 0; i < GETs.length; i++) {
+            tmp_arr = GETs.split('=');
+            key = tmp_arr[0];
+            GET[key] = tmp_arr[1];
+        }
+    }
+    return queryStr[1];
+}
+
+
+/*
+ * 获取当前路径
+ */
+function getCurrentPageUrl() {
+    var currentPageUrl = '';
+    if(typeof this.href === 'undefined'){
+        currentPageUrl = document.location.toString().toLowerCase();
+    } else {
+        currentPageUrl = this.href.toString().toLowerCase();
+    }
+    return currentPageUrl;
+}
+$('#currentUrl').text(getCurrentPageUrl());
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

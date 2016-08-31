@@ -22,6 +22,8 @@
             <li><a href="#constRegExp" class="list">常用的正则表达式</a></li>
             <li><a href="#wideHigh" class="list">js获取宽高</a></li>
             <li><a href="#jQuery-wideHigh" class="list">jQuery获取宽高</a></li>
+            <li><a href="#getUrlArg" class="list">获得URL中GET参数值</a></li>
+            <li><a href="#getCurrentPageUrl" class="list">获取当前路径</a></li>
         </ul>
     </div>
 
@@ -218,8 +220,7 @@ document.querySelector(".codes-btn").onclick = function () {
         <h3 id="wideHigh"><i></i>js获取宽高</h3>
         <div class="coding-panel">
             <div class="coding">
-                <pre><code class="language-JavaScript">原文链接：http://caibaojian.com/288.html
-//code from http://caibaojian.com/288.html
+                <pre><code class="language-JavaScript">
 //网页可见区域宽： document.body.clientWidth
 //网页可见区域高： document.body.clientHeight
 //网页可见区域宽： document.body.offsetWidth (包括边线的宽)
@@ -240,22 +241,60 @@ document.querySelector(".codes-btn").onclick = function () {
         <h3 id="jQuery-wideHigh"><i></i>jQuery获取宽高</h3>
         <div class="coding-panel">
             <div class="coding">
-                <pre><code class="language-JavaScript">原文链接：http://caibaojian.com/288.html
-//code from http://caibaojian.com/288.html
-jquery获取浏览器显示区域的高度 ： $(window).height();
-获取浏览器显示区域的宽度 ：$(window).width();
-获取页面的文档高度 ：$(document).height();
-获取页面的文档宽度 ：$(document).width();获取滚动条到顶部的垂直高度 ：$(document).scrollTop();
-获取滚动条到左边的垂直宽度 ：$(document).scrollLeft();计算元素位置和偏移量
-offset方法是一个很有用的方法，它返回包装集中第一个元素的偏移信息。默认情况下是相对body的偏移信息。结果包含 top和left两个属性。
-offset(options, results)
-options.relativeTo　　指定相对计 算偏移位置的祖先元素。这个元素应该是relative或absolute定位。省略则相对body。
-options.scroll　　是否把 滚动条计算在内，默认TRUE
-options.padding　　是否把padding计算在内，默认false
-options.margin 　　是否把margin计算在内，默认true
-options.border　　是否把边框计算在内，默认true</code></pre>
+                <pre><code class="language-JavaScript">$(window).scrollTop();  // 网页被卷去的高
+$(window).scrollLeft();  // 网页被卷去的左
+$(window).height();  // 浏览器窗口的高度(不包括各种任务栏侧栏)
+$(window).width();  // 浏览器窗口的宽度(不包括各种任务栏侧栏)
+$(document).height();  // 文档流的高度(不知道为何各种浏览器下解析不同，主要可能是border的问题)
+$(document).width();  // 文档流的宽度(不知道为何各种浏览器下解析不同，主要可能是border的问题)
+// 获取body的高度和宽度的三种写法
+$(document.body).height();  // body的高度
+$(document.body).width();  // body的宽度
+$('body').height();
+$('body').width();</code></pre>
             </div>
         </div>
+
+        <h3 id="getUrlArg"><i></i>获得URL中GET参数值</h3>
+        <div class="coding-panel">
+            <div class="coding">
+                <pre><code class="language-JavaScript">function getUrlArg() {
+    var queryStr = window.location.href.split('?');
+    var GETs,GET,tmp_arr,key,i;
+    if (queryStr[1]) {
+        GETs = queryStr[1].split('&');
+        GET = [];
+        for (i = 0; i < GETs.length; i++) {
+            tmp_arr = GETs.split('=');
+            key = tmp_arr[0];
+            GET[key] = tmp_arr[1];
+        }
+    }
+    return queryStr[1];
+}</code></pre>
+            </div>
+        </div>
+
+        <h3 id="getCurrentPageUrl"><i></i>获取当前路径</h3>
+        <div class="coding-panel">
+            <div class="result">
+                <h4><i></i>获取当前路径:</h4>
+                <h4><i></i>地址如下:</h4>
+                <p id="currentUrl"></p>
+            </div>
+            <div class="coding">
+                <pre><code class="language-JavaScript">function getCurrentPageUrl() {
+    var currentPageUrl = '';
+    if(typeof this.href === 'undefined'){
+        currentPageUrl = document.location.toString().toLowerCase();
+    } else {
+        currentPageUrl = this.href.toString().toLowerCase();
+    }
+    return currentPageUrl;
+}</code></pre>
+            </div>
+        </div>
+
     </div>
 </div>
 <script src="js/jquery-3.1.0.min.js"></script>
