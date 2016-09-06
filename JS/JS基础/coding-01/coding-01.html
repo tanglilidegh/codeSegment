@@ -5,16 +5,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>最常用的JS代码片段</title>
+    <link rel="stylesheet" href="css/cssresets.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="themes/prism.css">
+    <link rel="stylesheet" href="css/swiper.min.css">
 </head>
 <body>
 <h1>最常用的JS代码片段</h1>
 <div class="wrapper">
     <div class="menu">
         <ul>
+            <li><a href="#swiper-pic" class="list">轮播图</a></li>
+            <li><a href="#disabledNbtn" class="list">同时禁用多个按钮</a></li>
+
             <li><a href="#intercept" class="list">字符串超出长度后截取,显示...</a></li>
             <li><a href="#intercept2" class="list">针对输入框字符长度限制</a></li>
+            <li><a href="#intercept3" class="list">推荐:字符串超出长度后截取,显示...</a></li>
             <li><a href="#getHostName" class="list">获取域名主机</a></li>
             <li><a href="#goTop" class="list">返回顶部的通用方法</a></li>
             <li><a href="#getHostName" class="list">获取域名主机</a></li>
@@ -28,6 +34,28 @@
     </div>
 
     <div class="main">
+        <h3 id="swiper-pic"><i></i>轮播图</h3>
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide" style="background-image:url(images/pic01.jpg)">
+                    <a href="http://www.imooc.com"></a>
+                </div>
+                <div class="swiper-slide" style="background-image:url(images/pic02.jpg)">
+                    <a href="http://www.imooc.com"></a>
+                </div>
+                <div class="swiper-slide" style="background-image:url(images/pic03.jpg)">
+                    <a href="http://www.imooc.com"></a>
+                </div>
+            </div>
+            <div class="swiper-pagination swiper-pagination-white"></div>
+        </div>
+
+        <h3 id="disabledNbtn"><i></i>同时禁用多个按钮</h3>
+        <div class="validation-btn">
+            <button type="button" id="pass-btn" class="val-btn pass">审核通过</button>
+            <button type="button" id="deny-btn" class="val-btn deny">审核不通过</button>
+        </div>
+
         <h3 id="intercept"><i></i>字符串超出长度后截取,显示...</h3>
         <div class="coding-panel">
             <div class="result">
@@ -62,6 +90,7 @@ function cutstr(str, len) {
         </code>
                 </pre>
             </div>
+
             <h3 id="intercept2"><i></i>专门针对输入框字符长度限制用</h3>
             <div class="result">
                 <h4><i></i>另一种截取方式:</h4>
@@ -93,9 +122,25 @@ $('#txt').bind('keyup', function () {
 });</code>
                 </pre>
             </div>
+
+            <h3 id="intercept3"><i></i>推荐:字符串超出长度后截取,显示...</h3>
+            <div class="result">
+                <h4><i></i>推荐:字符串超出长度后截取,显示...:</h4>
+                <p class="msg fr" split="26">疯狂的世界此处是文案此处是文案此处疯狂的世界此处是文案此处是文案此是文案此处是文此处是文</p>
+            </div>
+            <div class="coding">
+                <pre><code class="language-JavaScript">$(function () {
+    jQuery.each(jQuery("[split]"), function (i) {
+        var toLength = parseInt($(this).attr("split"));
+        if (jQuery.trim(this.innerHTML).length > toLength) {
+            this.title = this.innerHTML;
+            this.innerHTML = jQuery.trim(this.innerHTML).substring(0, toLength) + "......";
+        }
+    });
+});</code></pre>
+            </div>
+
         </div>
-
-
 
         <h3 id="getHostName"><i></i>获取域名主机</h3>
         <div class="coding-panel">
@@ -194,6 +239,7 @@ document.querySelector(".codes-btn").onclick = function () {
                 </pre>
             </div>
         </div>
+
         <h3 id="constRegExp"><i></i>常用的正则表达式</h3>
         <div class="coding-panel">
             <div class="coding">
@@ -298,7 +344,9 @@ $('body').width();</code></pre>
     </div>
 </div>
 <script src="js/jquery-3.1.0.min.js"></script>
+<script src="js/swiper.min.js"></script>
 <script src="js/script.js"></script>
 <script src="themes/prism.js"></script>
+
 </body>
 </html>

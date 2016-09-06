@@ -1,6 +1,30 @@
 /**
  * Created by tanglili on 16/8/25.
  */
+/*
+ * 图片轮播
+ */
+var swiper = new Swiper('.swiper-container', {
+    pagination: '.swiper-pagination',
+    loop: true,
+    paginationClickable: true,
+    nextButton: '.swiper-button-next',
+    prevButton: '.swiper-button-prev',
+    spaceBetween: 30,
+    autoplay: 3000,
+    effect: 'fade'
+});
+
+/*
+ *  同时禁用多个按钮
+ */
+
+$(function () {
+    $('.pass, .deny').on('click',function () {
+        $(".pass").attr("disabled", true);
+        $(".deny").attr("disabled", true);
+    });
+});
 
 /*
  * 字符串超出长度后截取,显示...
@@ -57,6 +81,19 @@ $('#txt').bind('keyup', function () {
     if (val.replace(/[^\x00-\xff]/g, "**").length > 14) {
         this.value = getByteVal(val, 20);
     }
+});
+
+/*
+ * 推荐:字符串超出长度后截取,显示...
+ */
+$(function () {
+    jQuery.each(jQuery("[split]"), function (i) {
+        var toLength = parseInt($(this).attr("split"));
+        if (jQuery.trim(this.innerHTML).length > toLength) {
+            this.title = this.innerHTML;
+            this.innerHTML = jQuery.trim(this.innerHTML).substring(0, toLength) + "......";
+        }
+    });
 });
 
 /*

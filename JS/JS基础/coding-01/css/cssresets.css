@@ -1,0 +1,262 @@
+/************
+ * css reset
+ ************/
+
+*[hidefocus], input, textarea, a {
+    outline: none;
+}
+
+*, :before, :after {
+    box-sizing: border-box;
+}
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+caption, th {
+    font-weight: normal;
+    font-style: normal;
+    text-align: left;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+input, select, textarea, button {
+    font-size: 100%;
+    padding: 0;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+em, strong {
+    font-weight: bold;
+}
+
+i {
+    font-style: normal;
+}
+
+a, button {
+    cursor: pointer;
+}
+
+textarea {
+    resize: none;
+    overflow: auto;
+}
+
+a, a:active, a:hover, a:visited {
+    text-decoration: none;
+}
+
+/* 选中文字的背景色，以及是否有阴影 替代浏览器默认的设置*/
+::selection {
+    background-color: #b3d4fc;
+    text-shadow: none;
+}
+
+/*!* ===========*/
+/*placeholder颜色重置*/
+/*=========== *!*/
+input::-webkit-input-placeholder, textarea::-webkit-input-placeholder{
+    color: #9296b2 !important;
+    opacity:1;
+    font-size: 0.75rem;
+
+}
+input:-moz-placeholder,textarea:-moz-placeholder{
+    color: #9296b2 !important;
+    opacity:1;
+    font-size: 0.75rem;
+}
+input:-ms-input-placeholder,textarea:-ms-input-placeholder{
+    color: #9296b2 !important;
+    opacity:1;
+    font-size: 0.75rem;
+}
+
+:-moz-placeholder {
+    color: #9296b2 !important;
+    opacity:1;
+    font-size: 0.75rem;
+}
+
+/*!* ===========*/
+/*工具样式*/
+/*=========== *!*/
+
+.center-block {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.float-right {
+    float: right !important;
+}
+
+.float-left {
+    float: left !important;
+}
+
+.text-right {
+    text-align: right !important;
+}
+
+.text-left {
+    text-align: left !important;
+}
+
+.text-center {
+    text-align: center !important;
+}
+
+/* 隐藏元素 元素的位置也没有 */
+.hide {
+    display: none !important;
+}
+
+.show {
+    display: block !important;
+}
+
+/* 隐藏元素 但是元素的位置还在 */
+.invisible {
+    visibility: hidden;
+}
+
+/* 隐藏文本 */
+.text-hide {
+    font: 0/0 a;
+    color: transparent;
+    text-shadow: none;
+    background-color: transparent;
+    border: 0;
+}
+
+/* 清除浮动 */
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+/*!* ==============*/
+/*表单样式*/
+/*============== *!*/
+
+input {
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+    -webkit-user-modify: read-write-plaintext-only;
+}
+
+button {
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0)
+}
+
+select,
+textarea,
+input[type=text],
+input[type=button],
+input[type=search],
+input[type=password],
+input[type=datetime],
+input[type=datetime-local],
+input[type=date],
+input[type=month],
+input[type=time],
+input[type=week],
+input[type=number],
+input[type=email],
+input[type=url],
+input[type=tel],
+input[type=color] {
+    font-weight: normal;
+    -webkit-user-select: text;
+    user-select: text;
+    outline-style: none;
+    -webkit-font-smoothing: antialiased;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+button {
+    text-align: center;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    outline: 0;
+    border: none;
+}
+
+input,
+textarea,
+select {
+    background: #fff;
+    border: 1px solid #e2e2e2;
+    border-radius: 0.04rem;
+}
+
+input:focus,
+textarea:focus {
+    border-color: #999;
+}
+
+/* ==============
+   自定义页面样式
+   ============== */
+
+html * {
+    outline: 0;
+    -webkit-text-size-adjust: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+body {
+    height: 100%;
+    font-size: 1.2rem;
+    -webkit-text-size-adjust: none;
+    -webkit-user-select: none;
+    user-select: none;
+    background: #f1f0f6;
+}
+
+html {
+    overflow-y: scroll;
+}
+
+html, body {
+    font-family: "Helvetica Neue", Helvetica, Arial, "Hiragino Sans GB", "STHeiti", "微软雅黑", "Microsoft YaHei", sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
