@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>将数据通过Ajax提交到后台</title>
+</head>
+<body>
+
+<div class="product-detal">
+    <div class="contanct">
+        <div class="username"><img src="<?=Url::to('@mobileUrl/firmservice/images/zxicon.png') ?>"
+                                   class="zx">咨询人：<?=$order['user']['user_nickname']?></div>
+        <div class="mobile"><img src="<?=Url::to('@mobileUrl/firmservice/images/mobilebg.png') ?>" class="mobilebg">手机号码：<span
+                class="red-text"><a href="tel:<?=$order['user']['user_mobile']?>"><?=$order['user']['user_mobile']?></a></span>
+        </div>
+    </div>
+    <div class="info">
+        <div class="price">平台价：<span class="red-text fs36">¥<?=$order['product']['preferential_price']?></span><span
+                class="fs24 red-text">起</span></div>
+        <div class="code">订单编号：<?=$order['order_no']?></div>
+        <div class="time">创建时间：<?=date("Y-m-d H:i:s", $order['created_at'])?></div>
+    </div>
+    <div class="feeds_item hasimg">
+        <div class="middle cf">
+            <div class="feeds_item_pic">
+                <!-- <a href="<?=Url::to(['/mobile/firmservice/order/order-detial', 'order_id' => $order['id']]) ?>" target="_blank" class="img_href"> -->
+                <img src="<?=Url::to($order['product']['product_img']) ?>" class="img">
+                <!-- </a> -->
+            </div>
+            <div class="feeds_content">
+                <!-- <a href="<?=Url::to(['/mobile/firmservice/order/order-detial', 'order_id' => $order['id']]) ?>" target="_blank" class="toptitle"> -->
+                <?=$order['product']['product_name']?>
+                <!-- </a> -->
+                <div class="subtitles">产品简介：
+                    <?= strlen($order['product']['describe']) > 24 ? mb_substr($order['product']['describe'], 0, 24) .
+                    '...' : $order['product']['describe']?>
+                </div>
+                <div class="price">平台价：<span class="red-text fs36">￥<?=$order['product']['preferential_price']?><span
+                        class="fs24">起</span></span>
+                </div>
+                <div class="zxnum"><span class="zx">咨询数：<span class="red-text"><?=count($order['productOrder'])?></span></span>
+                </div>
+                <div class="old cf">
+                    <del>市场价：￥<?=$order['product']['market_price']?></del>
+                </div>
+            </div>
+        </div>
+        <div class="bottom">
+            <div class="text">
+                <span class="total">共1件商品</span>
+                <span class="total-money">总金额：¥<?=$order['product']['preferential_price']?></span>
+            </div>
+        </div>
+    </div>
+    <?php if ($order['order_status'] < 2) {
+        ?>
+    <div class="confirm-btn">
+        <a href="javascript:isConfirm(<?=$order['id']?>)"
+           class="default-btn">确认<?php echo $order['order_status']==1 ? '完成': '服务';?></a>
+    </div>
+    <?php
+        }?>
+</div>
+
+<script type="text/javascript">
+
+    function isConfirm(order_id) {
+        var url = "<?=Url::to(['order/order-confirm'])?>";
+        $.post(url, {order_id: order_id}, function (data) {
+            datas = eval('[' + data + ']');
+            if (datas[0].code == 0) {
+                alert(datas[0].tip);
+                location.reload();
+            } else {
+                alert(datas[0].tip);
+            }
+        });
+    }
+</script>
+</body>
+</html>

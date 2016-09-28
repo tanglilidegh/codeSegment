@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>手机验证</title>
+</head>
+<body>
+<div class="confirm">
+    <form action=""  id="confirm" method="">
+        <div class="formitem">
+            <input type="text" id="mobile" name="mobile" placeholder="请输入您的手机号码" maxlength="11" class="width100">
+        </div>
+        <div class="formitem">
+            <input type="text" id="vcode" name="vcode" placeholder="请输入验证码" class="code">
+            <div class="fr send">
+                <button type="button" id="extraction" class="extraction fs24">获取验证码</button>
+
+            </div>
+        </div>
+        <input type="hidden" name="_csrf" value="<?= Yii::$app->getRequest()->getCsrfToken() ?>" />
+        <div class="btn-bar center text-center">
+            <button type="submit" id="submit" data-url="<?= Url::toRoute('handle-verify');?>" class="send-message center text-center">确定</button>
+        </div>
+    </form>
+</div>
+<div class="mask-bg"></div>
+<div class="alert center">
+    <h1>请确认您输入的手机号码为注册黑马会员的手机号码,以防丢失您的黑马权益。</h1>
+    <div class="text-center center">
+        <a href="#" id="cancel" class="solid-btn small-btn">取消</a>
+        <a href="#" id="confirm1" class="default-btn small-btn">确定</a>
+    </div>
+
+</div>
+<script>
+    $(function() {
+        $('#extraction').on('click',function () {
+            //验证手机格式
+            var mobile = $('#mobile').val() ? $('#mobile').val() : '';
+
+            if (mobile == '') {
+                $('.alert, .center').find('h1').html('请您填写手机号');
+                $('.alert, .center').find('h1').css('text-align', 'center', 'font-size', '20px');
+
+                $('.mask-bg').show();
+                $('.alert').show();
+            } else {
+                var patten = /^(((13[0-9]{1})|(14[0-9]{1})|(17[0-9]{1})|(15[0-3]{1})|(15[5-9]{1})|(18[0-9]{1}))+\d{8})$/;
+
+                //验证手机格式
+                if (!patten.test(mobile)) {
+                    $('.alert, .center').find('h1').html('手机号格式错误');
+                    $('.alert, .center').find('h1').css('text-align', 'center', 'font-size', '20px');
+
+                    $('.mask-bg').show();
+                    $('.alert').show();
+                } else {
+                    //如果手机格式正确，显示“请确认您输入的手机号码为注册黑马会员的手机号码,以防丢失您的黑马权益” 提示
+                    $('.alert, .center').find('h1').html('请确认您输入的手机号码为注册黑马会员的手机号码,以防丢失您的黑马权益。');
+
+                    $('.alert, .center').find('h1').attr('flag', 1);
+                    $('.mask-bg').show();
+                    $('.alert').show();
+
+                    //点击确定，发送验证码
+                    $('#confirm1').click(function(){
+                        var flag = $('.alert, .center').find('h1').attr('flag');
+
+                        if (flag == 1) {
+                            //验证码倒计时
+                            var o = $('#extraction');
+                            time(o);
+
+                            $.get('{$base_url}' + 'api/sms/send-sms-code', {
+                                mobile: mobile,
+                                way: '1',
+                            }, function(rep) {
+                                console.log(rep);
+                            }, 'json');
+                        }
+                    });
+                }
+            }
+        });
+        $('.small-btn').on('click',function () {
+            $('.mask-bg').hide();
+            $('.alert').hide();
+        });
+
+        $('#submit').click(function(){
+            var code = $('#vcode').val() ? $('#vcode').val() : '',
+                    url = $(this).attr('data-url') ? $(this).attr('data-url') : '',
+                    mobile = $('#mobile').val() ? $('#mobile').val() : '';
+
+            //如果验证码为空
+            if (!code) {
+                $('.alert, .center').find('h1').html('请您输入验证码');
+                $('.alert, .center').find('h1').css('text-align', 'center', 'font-size', '20px');
+                $('.mask-bg').show();
+                $('.alert').show();
+                return false;
+            }
+
+            $.ajax({
+                'type' : 'POST',
+                'dataType' : 'json',
+                'url' : url,
+                'data' : {
+                    'mobile' : mobile,
+                    'vcode' : code,
+                },
+                success : function(data){
+                    if (data.code == 0) {
+                        window.location.href='{$base_url}' + 'mobile/hmConnections/contact-list/index';
+                        return false;
+                    } else {
+                        //当验证码错误时， flag设置为“”，禁止点击“确定”，发送验证码现象
+                        $('.alert, .center').find('h1').html(data.msg);
+                        $('.alert, .center').find('h1').css('text-align', 'center', 'font-size', '20px');
+                        $('.alert, .center').find('h1').attr('flag', "");
+                        $('.mask-bg').show();
+                        $('.alert').show();
+                        return false;
+                    }
+                },
+                error : function(data) {
+                    $('.alert, .center').find('h1').html('对不起, 服务器繁忙,请稍后访问..');
+                    $('.mask-bg').show();
+                    $('.alert').show();
+                    return false;
+                }
+            });
+
+            return false;
+        });
+
+        //验证码倒计时
+        var wait = 60;
+        function time(o) {
+            if (wait == 0) {
+                o.removeAttr("disabled");
+                o.html("获取验证码");
+                wait = 60;
+            } else {
+                console.log(o);
+                o.html("重新发送(" + wait + ")");
+                o.attr('disabled',"true");
+                wait--;
+                setTimeout(function () {
+                            time(o)
+                        },
+                        1000)
+            }
+        }
+    });
+</script>
+</body>
+</html>

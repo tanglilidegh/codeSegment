@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>点赞动画</title>
+</head>
+<body>
+<div class="resultwrap">
+    <div class="result"
+         style=" background: url(<?php echo $casper_result['chat_pic'] ?>) no-repeat; background-size: cover;">
+        <div class="toplogo"><img src="<?php echo Url::to('@mobileUrl/hmchat/images/logoimg.png') ?>"></div>
+        <div class="overmask"></div>
+        <div class="contentswrap">
+            <div class="mg-b30 myself">
+                <div class="fs60">我是<span class="red-color"><?php echo $casper_result['chat_user_name'] ?></span></div>
+                <div class="fs60"><span class="red-color"><?php echo $casper_result['chat_corp_name'] ?></span></div>
+                <div class="fs60">为100万中小企业提供</div>
+                <div class="fs60"><span class="red-color"><?php echo $casper_result['chat_work_cate_info'];?></span>
+                </div>
+            </div>
+            <div class="mg-b30 help">
+                <div class="fs44"><?php echo $casper_result['chat_work_info'] ?></div>
+            </div>
+        </div>
+    </div>
+    <div class="bottom">
+        <div class="content cf">
+            <div class="fl textbox">
+                <div class="ttext">630，</div>
+                <div class="btext">
+                    老牛等你来签约！
+                </div>
+            </div>
+            <div class="plusone">
+                <a href="#" id="dianzan"></a>
+                <span id="zan_num"><?php echo $zancount;?>人已赞</span>
+            </div>
+        </div>
+        <div class="btnwrap">
+            <a href="<?php echo Url::to(['/mobile/hmchat/banliao/tip']) ?>" id="another"
+               class="whitebtn mg-r40">了解详情</a>
+            <a href="<?php echo Url::to(['/mobile/hmchat/banliao/make']) ?>" class="whitebtn">我要认证</a>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+
+    /* 点赞 +1 动画效果 START */
+    (function ($) {
+        $.extend({
+            tipsBox: function (options) {
+                options = $.extend({
+                    obj: null,  //jq对象，要在那个html标签上显示
+                    str: "+1",  //字符串，要显示的内容;也可以传一段html，
+                    startSize: "20px",  //动画开始的文字大小
+                    endSize: "36px",    //动画结束的文字大小
+                    interval: 600,  //动画时间间隔
+                    color: "red",    //文字颜色
+                    callback: function () {
+                    }    //回调函数
+                }, options);
+
+                $("body").append("<span class='num'>" + options.str + "</span>");
+                var box = $(".num");
+                console.log(options.obj);
+                var left = options.obj.offset().left + options.obj.width() / 2.3;
+                var top = options.obj.offset().top - options.obj.height() / 4;
+                box.css({
+                    "position": "absolute",
+                    "left": left + "px",
+                    "top": top + "px",
+                    "z-index": 9999,
+                    "font-size": options.startSize,
+                    "line-height": options.endSize,
+                    "color": options.color
+                });
+                box.animate({
+                    "font-size": options.endSize,
+                    "opacity": "0",
+                    "top": top - parseInt(options.endSize) + "px"
+                }, options.interval, function () {
+                    box.remove();
+                    options.callback();
+                });
+            }
+        });
+    })(jQuery);
+
+    function niceIn(prop) {
+        prop.find('i').addClass('niceIn');
+        setTimeout(function () {
+            prop.find('i').removeClass('niceIn');
+        }, 1000);
+    }
+    $(function () {
+        $("#dianzan").click(function () {
+            $.ajax({
+                type: 'POST',
+                url: "<?php echo Url::to(['/mobile/hmchat/banliao/dozan']) ?>",
+                data: {chat_id : <?php echo $casper_result['chat_id'];?>},
+                dataType:'json',
+                success: function(data){
+                    //console.log(data.code);
+                    if(data.code == 0) {
+                        //console.log(data.count);
+                        $("#zan_num")[0].innerHTML = data.count + "人已赞";
+                    }
+                    $.tipsBox({
+                        obj: $("#dianzan"),
+                        str: "+1",
+                        callback: function () {
+                        }
+                    });
+                    niceIn($("#dianzan"));
+                }
+            });
+        });
+    });
+
+    /* 点赞 +1 动画效果 END */
+</script>
+</body>
+</html>

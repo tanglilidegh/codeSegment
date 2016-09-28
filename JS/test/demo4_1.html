@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>限制输入字数,超出后用文字提示</title>
+</head>
+<body>
+<div class="content">
+    <div class="person-img">
+        <img src="<?=$user['user_headimgurl']?>" class="big-advator">
+    </div>
+    <div class="name-title"><?=$user['user_fullname']?></div>
+    <div class="company"><?=$user['user_company']?> <?=$user['user_position']?></div>
+    <div class="edit cf" style="padding:0 30px; margin-top:10px;">
+        <span class="fl">个人介绍：</span>
+
+        <textarea class="companyjj fl" style="padding:0; margin:0; width:80%; text-align:left;" maxlength="45"></textarea>
+        <div class="fl jsresult" style="display: none; width:80%; text-align:left;"></div>
+        <a href="#" class="mod" data="<?= isset($user['user_intro']) && $user['user_intro'] ? $user['user_intro'] : '';?>" data-url="<?= Url::toRoute(['usershare/edit']);?>">编辑</a>
+    </div>
+</div>
+<script>
+    $(function() {
+        var placeholder = "您可编辑个人介绍，让其他朋友更深的了解你。限制字数42个字符";
+        var intro = $(".mod").attr('data');
+
+        if (intro != '') {
+            $(".companyjj").text(intro);
+        } else {
+            $(".companyjj").text(placeholder);
+        }
+
+        $(".mod").on("click", function() {
+            $(this).prev().focus().text(" ");
+            if ($(this).text() == '编辑') {
+                $(this).text('保存');
+
+                //判断，如果他以前填写过个人介绍，就展示，否则显示默认提示
+                if (intro != '') {
+                    $(this).prev().focus().text(intro);
+                } else {
+                    $(this).prev().focus().text(" ");
+                }
+
+                return false;
+            }
+
+            var url = $(this).attr('data-url');
+
+            if ($(this).text() == '保存') {
+                var userIntro = $('.companyjj').val();
+
+                if (userIntro.length > 40) {
+                    alert('个人介绍不能太多哦!');
+                    $(this).prev().focus().text(" ");
+                    return false;
+                }
+
+                $.ajax({
+                    'type' : 'GET',
+                    'dataType' : 'json',
+                    'url' : url,
+                    'data' : {
+                        'user_intro' : userIntro
+                    },
+                    success : function(data) {
+                        showDialog(data.msg)
+                        $(".mod").text('编辑');
+                        $(".jsresult").show().text(userIntro);
+
+                        $(".companyjj").hide();
+
+                        return false;
+                    },
+                    error : function() {
+                        showDialog('服务器加载失败')
+                        return false;
+                    }
+                });
+            }
+
+
+            function showDialog(chineseMag) {
+                console.log($('#error'));
+                $('#error').html(chineseMag);
+                $('#dialog').show();
+
+                $('#confirm').click(function() {
+
+                    location.reload();
+
+                    $('#dialog').hide();
+                });
+            }
+        });
+    });
+</script>
+</body>
+</html>

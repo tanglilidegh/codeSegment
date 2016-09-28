@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>验证02</title>
+</head>
+<body>
+<div class="confirm">
+    <form action='<?= Url::to(['/mobile/firmservice/user/modify', 'name' => $attribute, 'link' => $link]) ?>' method='post'>
+    <div class="formitem">
+        <input type="text" name='WechatUser[<?= $attribute ?>]' placeholder="请输入编辑信息" value='<?= $model->$attribute ? $model->$attribute : "" ?>'>
+    </div>
+    <div class="btn-wrap">
+        <button type="submit" class="default-btn">完成</button>
+    </div>
+    </form>
+</div>
+<script>
+    $(function() {
+        var sub = false;
+        $('input[name="WechatUser[user_fullname]"]').blur(function() {
+            var v = $(this).val();
+            if (v.length > 30) {
+                alert('输入姓名过长');
+            }
+
+            if (!v) {
+                alert('不允许为空');
+            }
+            sub = true;
+        });
+
+        $('input[name="WechatUser[user_company]"]').blur(function() {
+            var v = $(this).val();
+            if (v.length > 50) {
+                alert('输入公司名过长');
+            }
+
+            sub = true;
+        });
+
+        $('input[name="WechatUser[user_position]"]').blur(function() {
+            var v = $(this).val();
+            if (v.length > 50) {
+                alert('输入职位过长');
+            }
+
+            sub = true;
+        });
+
+        $('form').submit(function() {
+            if (sub) {
+                return true;
+            }
+            return false;
+        })
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>限制输入字数,超出后用文字提示</title>
+</head>
+<body>
+<div class="edit">
+    <textarea class="companyjj"><?=$contact['corp']['corp_info']?></textarea>
+    <a href="#" class="mod">编辑</a>
+</div>
+<script type="text/javascript">
+    $(function () {
+        var placeholder = "个人公司介绍：您可编辑个人介绍或者公司介绍，让其他朋友更深的了解你。限制字数42个字符";
+        $(".companyjj").text(placeholder);
+        $(".mod").on("click", function () {
+            $(this).prev().focus().text(" ");
+        });
+    })
+</script>
+</body>
+</html>

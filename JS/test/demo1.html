@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>验证01</title>
+</head>
+<body>
+<div class="contentwrap">
+    <div class="logo">
+        <img src="<?=Url::to('@mobileUrl/firmservice/images/logo.png') ?>" class="logoimg">为百万中小企业优选服务商
+    </div>
+    <div class="content cf">
+        <div class="work cf">
+            <span class="fl">姓名</span>
+            <input type="text" class="fl" name="business_name" placeholder="输入您的姓名">
+        </div>
+        <div class="work cf">
+            <span class="fl">手机</span>
+            <input type="text" class="fl" name="mobile" placeholder="输入您的手机号">
+        </div>
+        <div class="work cf">
+            <span class="fl">微信</span>
+            <input type="text" class="fl" name="weixin" placeholder="输入您的微信号">
+        </div>
+        <div class="work cf">
+            <span class="fl">邮箱</span>
+            <input type="text" class="fl" name="email" placeholder="输入您的邮箱">
+        </div>
+        <div class="work cf">
+            <span class="fl">公司</span>
+            <input type="text" class="fl" name="company" placeholder="输入您所在的企业名称">
+        </div>
+        <div class="work cf">
+            <span class="fl">职位</span>
+            <input type="text" class="fl" name="position" placeholder="输入您的职位">
+        </div>
+
+        <div class="company cf">
+            <span class="fl">融资阶段</span>
+            <select name="financing" class="fl">
+                <option></option>
+                <?php
+                    foreach ($financing as $key => $value) {
+                ?>
+                <option value="<?=$key?>"><?=$value?></option>
+                <?php
+                    }
+                    ?>
+            </select>
+
+        </div>
+        <div class="company cf">
+            <span class="fl">年营收</span>
+            <input type="text" name="revenue_annually" class="fl" placeholder="">
+            <span class="pos">万</span>
+        </div>
+        <div class="company cf">
+            <span class="fl">年利润</span>
+            <input type="text" name="profit_annually" class="fl" placeholder="">
+            <span class="pos">万</span>
+        </div>
+        <div class="company cf">
+            <span class="fl">员工人数</span>
+            <select name="company_num" class="fl">
+                <option></option>
+                <?php
+                    foreach ($company_num as $key => $value) {
+                ?>
+                <option value="<?=$key?>"><?=$value?></option>
+                <?php
+                    }
+                    ?>
+            </select>
+
+        </div>
+    </div>
+    <div class="text-center btnwrap">
+        <button type="button" class="default-btn apply-business">提交</button>
+    </div>
+</div>
+
+<script type="text/javascript">
+
+
+    $('.apply-business').on("click", function() {
+
+        var business_name = $('input[name="business_name"]').val();
+        var mobile = $('input[name="mobile"]').val();
+        var weixin = $('input[name="weixin"]').val();
+        var email = $('input[name="email"]').val();
+
+        // var email_check = /^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+((\.[a-zA-Z0-9_-]{2,3}){1,2})$/;
+        //    if (!email_check.test(email)) {
+        //        alert('您的邮箱格式错误！');
+        //        return false;
+        //    }
+
+        var company = $('input[name="company"]').val();
+        var position = $('input[name="position"]').val();
+        var revenue_annually = $('input[name="revenue_annually"]').val();
+        var profit_annually = $('input[name="profit_annually"]').val();
+
+        var financing = $('select[name="financing"] option:selected').val();
+        var company_num = $('select[name="company_num"] option:selected').val();
+
+        if (!business_name || !mobile || !weixin|| !email|| !company|| !position|| !revenue_annually || !profit_annually || !financing || !company_num) {
+            alert('请填写完整信息！');
+            return false;
+
+        }
+
+        var mobile_check = /^(1)[0-9]{10}$/;
+        if (!mobile_check.test(mobile)) {
+            alert('您的手机格式错误！');
+            return false;
+        }
+        var url = "<?=Url::to(['business/insert-business'])?>";
+        $.post(
+                url,
+                //"/mobile/firmservice/business/insert-business",
+                {
+                    business_name:business_name,
+                    mobile:mobile,
+                    weixin:weixin,
+                    email:email,
+                    company:company,
+                    position:position,
+                    revenue_annually:revenue_annually,
+                    profit_annually:profit_annually,
+                    financing:financing,
+                    company_num:company_num,
+
+                },
+                function(data){
+                    datas=eval('['+data+']');
+                    if ( datas[0].code == 0 ) {
+                        var tip = '欢迎您申请成为黑马伙伴商家，您提交的信息正在审核中，审核通过后我们将在第一时间通知您，敬请期待！';
+                        alert(tip);
+                        location.reload();
+                    }else{
+                        alert(datas[0].tip);
+                    }
+                });
+
+    });
+</script>
+
+</body>
+</html>
