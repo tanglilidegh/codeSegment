@@ -1,0 +1,173 @@
+*{
+    box-sizing: border-box;
+}
+body, html {
+    background-color: #0084a0;
+}
+
+h2, h3, h4, p, ul{
+    margin: 0;
+    padding: 0;
+}
+
+pre {
+    border: 2px solid rgba(0, 132, 160, 0.1);
+}
+
+h3 {
+    color: #676469;
+    line-height: 25px;
+    padding: 20px 0;
+}
+
+h4 {
+    color: rgb(155, 216, 255);
+    line-height: 35px;
+}
+
+input{
+    outline: none;
+}
+.coding-panel {
+    padding: 20px;
+    background-color: rgba(235, 234, 234, 0.38);
+}
+
+h3 i {
+    margin-right: 5px;
+    display: inline-block;
+    width: 30px;
+    height: 17px;
+    background: url("../images/arr.png") no-repeat;
+    background-size: cover;
+}
+
+h4  i{
+    margin-right: 5px;
+    margin-bottom: -2px;
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background: url("../images/pencil.png") no-repeat;
+    background-size: cover;
+}
+
+.show{
+    color: rgba(51, 51, 51, 0.69);
+    text-indent: 1.4em;
+}
+
+.before {
+    margin-bottom: 20px;
+}
+
+.wrapper {
+    /*position: relative;*/
+    width: 90%;
+    margin: 0 auto;
+    background: #fff;
+}
+
+.main {
+    width: 76%;
+    margin-left: 22%;
+}
+
+.menu {
+    position: fixed;
+    left: 5%;
+    top: 75px;
+    width: 20%;
+    padding: 20px 0 0 20px;
+}
+.menu ul li{
+    list-style: none;
+    line-height: 25px;
+}
+.menu ul li a{
+    position: relative;
+    padding-left: 10px;
+    color: rgba(51, 51, 51, 0.69);
+    text-decoration: none;
+}
+.menu ul li a:before{
+    content: " ";
+    position: absolute;
+    top: 5px;
+    left: 0;
+    height: 0;
+    width: 0;
+    pointer-events: none;
+    border: 3px solid rgba(51, 51, 51, 0.4);
+    border-radius: 50%;
+}
+.menu ul li a:hover{
+    color: rgb(155, 216, 255);
+}
+h1 {
+    color: #fff;
+    text-align: center;
+}
+
+.result {
+    padding: 0 0 20px 0;
+}
+
+@media screen and (max-width: 55em) {
+}
+
+@media screen and (max-width: 40em) {
+    .menu{
+        display: none;
+    }
+    .main {
+        width: 100%;
+        margin-left: 0;
+    }
+    h3{
+        margin: 0 10px;
+    }
+}
+
+
+/* ===============
+   返回顶部
+   =============== */
+#gotop-btn{
+    position: fixed;
+    right: 30px;
+    bottom: 20px;
+    padding: 10px;
+    color: #fff;
+    border: 2px solid #000;
+    background-color: rgba(51, 51, 51, 0.57);
+    cursor: pointer;
+}
+
+/* ===============
+   js获取验证码倒计时效果
+   =============== */
+.input-line {
+    margin: 0.5rem 0;
+    color: #007991;
+}
+.codes, .codes-btn{
+    background-color: #d8fcff;
+    border: 1px solid rgba(0, 131, 122, 0.62);
+    border-radius: 2px;
+    height: 2.5rem;
+    line-height: 2.5rem;
+    outline: none;
+
+}
+.codes {
+    width: 8.6875rem;
+    padding-left: 0.7rem;
+
+}
+.codes-btn {
+    padding: 0;
+    width: 6.6875rem;
+    color: #007991;
+    cursor: pointer;
+}
